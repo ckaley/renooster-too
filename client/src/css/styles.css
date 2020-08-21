@@ -1,0 +1,109 @@
+/****************
+** HTML Styles **
+****************/
+
+a, body, img, p, span {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+footer a {
+    color: #ffffff;
+    margin-right: 0.75rem;
+}
+
+footer span {
+    line-height: 2.5rem !important;
+}
+
+footer a svg {
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+}
+
+footer .footer-copyright .row {
+    margin: 0;
+}
+
+nav a.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/**************
+** ID Styles **
+**************/
+
+#app-content {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#router-content {
+    align-items: center;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#contact {
+    margin-top: 20px;
+}
+
+#not-found {
+    align-items: center;
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#not-found span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+#portfolio {
+    margin-top: 20px;
+}
+
+#project {
+    margin-top: 20px;
+}
+
+#project a {
+    color: #ffab40;
+    text-transform: uppercase;
+}
+
+#project img {
+    height: auto;
+    width: 100%;
+}
+
+/*****************
+** Class Styles **
+*****************/
+
+.brand-logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.card img, .card p, .card span {
+    color: #000000;
+}
+
+.success {
+    color: #26a69a;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 36px;
+}

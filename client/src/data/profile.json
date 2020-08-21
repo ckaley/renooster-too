@@ -1,0 +1,11 @@
+{
+    "firstName": "Craig 345",
+    "lastName": "Kaley",
+    "fullName": "Craig Kaley 345",
+    "headline": "Lorem ipsum dolar sit amet",
+    "skills": ["Skill Craig", "Skill Craig 22", "Skill 3", "Skill 4", "Skill 5", "Skill 6"],
+    "phone": "(555) 555-5555",
+    "email": "first.last@example.com",
+    "github": "https://github.com/",
+    "linkedIn": "https://www.linkedin.com/"
+}
