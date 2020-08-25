@@ -1,8 +1,91 @@
-/****************
+h1 {
+    font-family: "Cherry Cream Soda", cursive;
+    font-size: 120px;
+    text-align: center;
+    color: #d52b14;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+  
+  h4 {
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  body {
+    background-image: url("/images/renoosteranimals_bg.png");
+    background-size: cover;
+    background-color: #3bb5e0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+  }
+  
+  .navbar {
+    background-color: black;
+    height: 50px;
+  }
+  
+  .navbar-brand {
+    color: white;
+  }
+  
+  .page-header img {
+    float: left;
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-right: 25px;
+  }
+  
+  .page-header h1 {
+    font-weight: 600;
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .btn {
+    background-color: red;
+    margin-right: 10px;
+  }
+  
+  .card {
+    margin: 50px 0;
+    border-width: 2px;
+    border-style: solid solid solid solid;
+    border-color: #000;
+  }
+  
+  .card-title {
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .modal-body {
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .modal-title {
+    color: red;
+    font-weight: 600;
+  }
+  
+  .expireWarning {
+    color: #d52b14;
+  }
+  
+
+
+/* /****************
 ** HTML Styles **
 ****************/
 
-a, body, img, p, span {
+/* a, body, img, p, span {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -31,13 +114,13 @@ footer .footer-copyright .row {
 
 nav a.active {
     background-color: rgba(0, 0, 0, 0.1);
-}
+} */
 
 /**************
 ** ID Styles **
 **************/
 
-#app-content {
+/* #app-content {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -67,9 +150,9 @@ nav a.active {
     font-family: 'Roboto', sans-serif;
     font-size: 4rem;
     font-weight: 700;
-}
+} */
 
-#portfolio {
+/* #portfolio {
     margin-top: 20px;
 }
 
@@ -85,13 +168,13 @@ nav a.active {
 #project img {
     height: auto;
     width: 100%;
-}
+} */
 
 /*****************
 ** Class Styles **
 *****************/
 
-.brand-logo {
+/* .brand-logo {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
@@ -106,4 +189,4 @@ nav a.active {
     font-size: 1rem;
     font-weight: 700;
     line-height: 36px;
-}
+} */

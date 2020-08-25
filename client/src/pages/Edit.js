@@ -6,34 +6,34 @@ import axios from 'axios'
 // data
 // import projectsJSON from '../data/projects.json'
 
-const Project = () => {
+const Subscription = () => {
     // get slug param
     const { slug } = useParams()
 
     // state hook variables
-    const [project, setProject] = useState([])
+    const [subscription, setSubscription] = useState([])
 
-    // destructure project
+    // destructure subscription
     const {
         name,
         description,
         screenshot,
         github,
         demo
-    } = project
+    } = subscription
 
     // get project after component mounts
     useEffect(() => {
-        axios.get(`/api/projects/${slug}`)
-            .then(res => setProject(res.data))
+        axios.get(`/api/subscriptions/${slug}`)
+            .then(res => setSubscription(res.data))
             .catch(err => console.log(err))
-        //setProject(projectsJSON[0])
+ 
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
-        <div className="container" id="project">
+        <div className="container" id="subscription">
             <div className="card-panel">
                 <div className="row">
                     <div className="col s12 m6 l4">
@@ -53,4 +53,4 @@ const Project = () => {
     )
 }
 
-export default Project
+export default Subscription

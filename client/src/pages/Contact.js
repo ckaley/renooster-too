@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const Contact = () => {
+const Contact = (props) => {
     // // state hook variables
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastEmail] = useState('')
@@ -10,6 +10,16 @@ const Contact = () => {
     const [tel, setTel] = useState('')
     const [message, setMessage] = useState('')
     const [success, setSuccess] = useState(false)
+
+    // below is equivalent to above
+    // const [state, setState] = useState({
+    //     firstName: "",
+    //     lastName: "",
+    //     email: "",
+    //     tel: "",
+    //     message: "",
+    //     success: false
+    // })
 
     const handleChange = event => {
         // destructure event
@@ -19,6 +29,8 @@ const Contact = () => {
         switch (name) {
             case 'firstName':
                 setFirstName(value)
+                // equivalent to:
+                // setState({...state, firstName: value})
                 break
             case 'lastName':
                 setLastEmail(value)
@@ -68,6 +80,7 @@ const Contact = () => {
             <div className="row">
                 <div className="col s12 l8 offset-l2">
                     <div className="card-panel">
+                    <h5 className="card-title">Contact Us</h5>
                         <div className="row">
                             <form
                                 className="col s12"
