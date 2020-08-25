@@ -2,7 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ project }) => {
+const SubscriptionCard = ({ subscription }) => {
     // // destructure project
     const {
         name,
@@ -11,12 +11,12 @@ const ProjectCard = ({ project }) => {
         screenshot,
         github,
         demo
-    } = project
+    } = subscription
 
     return (
         <div className="col s12 m6 l4">
             <div className="card">
-                <Link to={`projects/${slug}`}>
+                <Link to={`subscriptions/${slug}`}>
                     <div className="card-image">
                         <img alt={name} src={screenshot} />
                     </div>
@@ -34,4 +34,4 @@ const ProjectCard = ({ project }) => {
     )
 }
 
-export default ProjectCard
+export default SubscriptionCard

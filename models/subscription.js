@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var projectSchema = new Schema({
+var subscriptionSchema = new Schema({
     name: String,
     slug: String,
     description: String,
@@ -10,6 +10,6 @@ var projectSchema = new Schema({
     demo: String
 });
 
-var Project = mongoose.model('Project', projectSchema);
+var Subscription = mongoose.model('Subscription', subscriptionSchema);
 
-module.exports = Project;
+module.exports = Subscription;
