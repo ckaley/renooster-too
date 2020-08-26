@@ -1,12 +1,11 @@
 // dependencies
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom';
-import axios from 'axios'
 
 const Login = () => {
     return (
         <div className="container" id="contact">
-                    <div className="page-header">
+        <div className="page-header">
             <img src="/images/renoosterlogo.png" alt="Renooster Logo" />
             <h1>Renooster</h1>
             <h4>The easy way to manage your subscriptions!</h4>
