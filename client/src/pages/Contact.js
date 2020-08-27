@@ -77,6 +77,11 @@ const Contact = (props) => {
 
     return (
         <div className="container" id="contact">
+                    <div className="page-header">
+            <img src="/images/renoosterlogo.png" alt="Renooster Logo" />
+            <h1>Renooster</h1>
+            <h4>The easy way to manage your subscriptions!</h4>
+        </div>
             <div className="row">
                 <div className="col s12 l8 offset-l2">
                     <div className="card-panel">

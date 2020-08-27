@@ -1,15 +1,17 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var subscriptionSchema = new Schema({
-    name: String,
-    slug: String,
-    description: String,
-    screenshot: String,
-    github: String,
-    demo: String
+  _id: String,
+  name: String,
+  slug: String,
+  startDate: Date,
+  endDate: Date,
+  price: Number,
+  frequency: String,
+  icon: String,
 });
 
-var Subscription = mongoose.model('Subscription', subscriptionSchema);
+var Subscription = mongoose.model("Subscription", subscriptionSchema);
 
 module.exports = Subscription;
