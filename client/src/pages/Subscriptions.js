@@ -18,7 +18,7 @@ const Subscriptions = (props) => {
   // get profile after component mounts
   useEffect(() => {
     axios
-      .get('/api/profile/')
+      .get("/api/profile/")
       .then((res) => setProfile(res.data))
       .catch((err) => console.log(err));
     // setProfile(profileJSON)
@@ -34,7 +34,6 @@ const Subscriptions = (props) => {
 
   return (
     <>
-      <Navbar profile={profile} />
       <div className="container" id="subscriptions">
         <div className="row">
           {subscriptions.map((subscription, index) => {
@@ -42,7 +41,6 @@ const Subscriptions = (props) => {
           })}
         </div>
       </div>
-      <Footer profile={profile} />
     </>
   );
 };
