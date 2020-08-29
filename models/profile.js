@@ -1,18 +1,13 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var profileSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    fullName: String,
-    headline: String,
-    skills: Array,
-    phone: String,
-    email: String,
-    github: String,
-    linkedIn: String
+  firstName: String,
+  lastName: String,
+  password: String,
+  email: String,
 });
 
-var Profile = mongoose.model('Profile', profileSchema);
+var Profile = mongoose.model("Profile", profileSchema);
 
 module.exports = Profile;
