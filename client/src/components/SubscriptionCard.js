@@ -16,29 +16,29 @@ const SubscriptionCard = ({ subscription }) => {
   } = subscription;
 
   return (
-    <div className="col s12 m6 l4">
-      <div className="card">
+    <div className='col s12 m6 l4'>
+      <div className='card'>
         <Link to={`subscriptions/${slug}`}>
-          <div className="card-image">
-            <img src={icon} width="150" height="150" />
+          <div className='card-image'>
+            <img src={icon} width='150' height='150' />
           </div>
-          <div className="card-content">
-            <span className="card-title">{name}</span>
-            <p class="card-text">
+          <div className='card-content'>
+            <span className='card-title'>{name}</span>
+            <p className='card-text'>
               Start Date: <i>{startDate}</i>
             </p>
-            <p class="card-text">
+            <p className='card-text'>
               End Date: <i>{endDate}</i>
             </p>
-            <p class="card-text">
+            <p className='card-text'>
               Price: <i>{price}</i>
             </p>
-            <p class="card-text">
+            <p className='card-text'>
               Frequency: <i>{frequency}</i>
             </p>
           </div>
         </Link>
-        <div className="card-action">
+        <div className='card-action'>
           <button id={id}>Edit</button>
           <button id={id}>Delete</button>
         </div>
