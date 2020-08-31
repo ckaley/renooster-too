@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     .catch((err) => res.status(404).json(err));
 });
 
-router.get("/:_id", (req, res) => {
+router.get("/:id/", (req, res) => {
   db.Subscription.findOne({ slug: req.params.slug })
     .then((subscription) => res.status(200).json(subscription))
     .catch((err) => res.status(404).json(err));
