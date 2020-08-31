@@ -31,7 +31,7 @@ const SubscriptionCard = ({ subscription, deleteSubscription }) => {
               End Date: <i>{Moment(endDate).format("MM-DD-YYYY")}</i>
             </p>
             <p className="card-text">
-              Price: <i>{price}</i>
+              Price: <i>${price.toFixed(2)}</i>
             </p>
             <p className="card-text">
               Frequency: <i>{frequency}</i>
