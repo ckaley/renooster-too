@@ -25,7 +25,7 @@ const Subscriptions = (props) => {
     getSubscriptions();
   }, []);
 
-    // get subscriptions after component mounts
+  // get subscriptions after component mounts
   const getSubscriptions = () => {
     axios
       .get("/api/subscriptions/")
@@ -50,15 +50,12 @@ const Subscriptions = (props) => {
     }).then(async (result) => {
       if (result.value) {
         await axios
-          .delete(`/api/delete/${id}`)
+          .delete(`/api/subscriptions/${id}`)
           .then((res) => {
             Swal.fire("Deleted!", "Your file has been deleted.", "success");
           })
           .catch((err) => {
-            Swal.fire(
-              "Sorry something went wrong. Please try again.",
-              "error"
-            );
+            Swal.fire("Sorry something went wrong. Please try again.", "error");
             console.log(err);
           });
 

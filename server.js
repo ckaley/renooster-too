@@ -2,8 +2,7 @@
 var express = require("express");
 var mongoose = require("mongoose");
 var path = require("path");
-// var passport = require("passport");
-// var profile = require("./routes/profile");
+
 // // configure dotenv
 require("dotenv").config();
 
@@ -13,20 +12,6 @@ var app = express();
 // configure middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// // for Passport
-// app.use(
-//   session({
-//     secret: "keyboard cat",
-//     resave: true,
-//     saveUninitialized: true,
-//   })
-// ); // session secret
-// app.use(passport.initialize());
-// app.use(passport.session()); // persistent login sessions
-
-// //load passport strategies
-// require("./config/passport/passport.js")(passport, db.users);
 
 // configure api routes
 app.use("/api", require("./routes"));
