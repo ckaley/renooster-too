@@ -1,13 +1,13 @@
 // dependencies
 import React from "react";
 import { Link } from "react-router-dom";
+import Moment from "moment";
 
 const SubscriptionCard = ({ subscription, deleteSubscription }) => {
   // destructure subscriptions
   const {
     _id,
     name,
-    slug,
     startDate,
     endDate,
     price,
@@ -18,17 +18,17 @@ const SubscriptionCard = ({ subscription, deleteSubscription }) => {
   return (
     <div className="col s12 m6 l4">
       <div className="card">
-        <Link to={`subscriptions/${slug}`}>
+        <Link to={`subscriptions/${_id}`}>
           <div className="card-image">
             <img src={icon} width="150" height="150" />
           </div>
           <div className="card-content">
             <span className="card-title">{name}</span>
             <p className="card-text">
-              Start Date: <i>{startDate}</i>
+              Start Date: <i>{Moment(startDate).format("MM-DD-YYYY")}</i>
             </p>
             <p className="card-text">
-              End Date: <i>{endDate}</i>
+              End Date: <i>{Moment(endDate).format("MM-DD-YYYY")}</i>
             </p>
             <p className="card-text">
               Price: <i>{price}</i>

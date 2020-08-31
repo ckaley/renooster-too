@@ -4,7 +4,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = ({ profile }) => {
   // // destructure profile
-  const { fullName } = profile;
+  const { firstName, lastName } = profile;
 
   // react router hook variable
   let location = useLocation();
@@ -18,7 +18,7 @@ const Navbar = ({ profile }) => {
         <div className="row">
           <div className="col s12">
             <Link to="/" className="brand-logo">
-              {fullName}
+              {firstName} {lastName}
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>

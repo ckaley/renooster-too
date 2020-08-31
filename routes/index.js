@@ -5,15 +5,12 @@ var express = require("express");
 var router = express.Router();
 
 // configure router
-router.use("/signup", require("./signup"));
-router.use("/login", require("./login"));
-router.use("/add", require("./add"));
-router.use("/edit", require("./edit"));
+//router.use("/signup", require("./signup"));
 router.use("/budgetTracker", require("./budgetTracker"));
-router.use("/expiring", require("./expiring"));
 router.use("/contact", require("./contact"));
+router.use("/expiring", require("./expiring"));
+router.use("/login", require("./login"));
 router.use("/profile", require("./profile"));
-router.use("/delete", require("./delete"));
 router.use("/subscriptions", require("./subscriptions"));
 
 module.exports = router;

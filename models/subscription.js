@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
+// Define fields for the Subscription Schema
 var subscriptionSchema = new Schema({
   id: String,
   name: String,
