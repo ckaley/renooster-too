@@ -13,6 +13,7 @@ router.use("/budgetTracker", require("./budgetTracker"));
 router.use("/expiring", require("./expiring"));
 router.use("/contact", require("./contact"));
 router.use("/profile", require("./profile"));
+router.use("/delete", require("./delete"));
 router.use("/subscriptions", require("./subscriptions"));
 
 module.exports = router;
