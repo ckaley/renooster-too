@@ -77,87 +77,86 @@ const Contact = (props) => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="brand-header">
+    <div className='container'>
+      <div className='row'>
+        <div className='brand-header'>
           <img
-            src="/images/renoosterlogo.png"
-            alt="Renooster Logo"
-            id="renooster-logo"
+            src='/images/renoosterlogo.png'
+            alt='Renooster Logo'
+            id='renooster-logo'
           />
-          <h1 className="renooster-title">Renooster</h1>
+          <h1 className='renooster-title'>Renooster</h1>
         </div>
       </div>
-      <div className="row">
-        <div className="col m12 center-align">
-          <h4 className="tagline">
+      <div className='row'>
+        <div className='col m12 center-align'>
+          <h4 className='tagline'>
             The easy way to manage your subscriptions!
           </h4>
         </div>
       </div>
-      <div className="row">
-        <div className="col s12 l8 offset-l2">
-          <div className="form-panel">
-            <h5 className="form-title">Contact Us</h5>
-            <div className="row">
-              <form className="col s12" onSubmit={handleSubmit}>
-                <div className="row">
-                  <div className="input-field col s6">
+      <div className='row'>
+        <div className='col s12 l8 offset-l2'>
+          <div className='form-panel'>
+            <h5 className='form-title'>Contact Us</h5>
+            <div className='row'>
+              <form className='col s12' onSubmit={handleSubmit}>
+                <div className='row'>
+                  <div className='input-field col s6'>
                     <span>First Name</span>
                     <input
-                      autoComplete="given-name"
-                      name="firstName"
+                      autoComplete='given-name'
+                      name='firstName'
                       onChange={handleChange}
-                      type="text"
+                      type='text'
                       value={firstName}
                     />
                   </div>
-                  <div className="input-field col s6">
+                  <div className='input-field col s6'>
                     <span>Last Name</span>
                     <input
-                      autoComplete="family-name"
-                      name="lastName"
+                      autoComplete='family-name'
+                      name='lastName'
                       onChange={handleChange}
-                      type="text"
+                      type='text'
                       value={lastName}
                     />
                   </div>
-                  <div className="input-field col s12">
+                  <div className='input-field col s12'>
                     <span>Email</span>
                     <input
-                      autoComplete="email"
-                      name="email"
+                      autoComplete='email'
+                      name='email'
                       onChange={handleChange}
-                      type="email"
+                      type='email'
                       value={email}
                     />
                   </div>
-                  <div className="input-field col s12">
+                  <div className='input-field col s12'>
                     <span>Phone</span>
                     <input
-                      autoComplete="tel"
-                      name="tel"
+                      autoComplete='tel'
+                      name='tel'
                       onChange={handleChange}
-                      type="tel"
+                      type='tel'
                       value={tel}
                     />
                   </div>
-                  <div className="input-field col s12">
+                  <div className='input-field col s12'>
                     <span>Message</span>
                     <textarea
-                      className="materialize-textarea"
+                      className='materialize-textarea'
                       onChange={handleChange}
-                      name="message"
-                      value={message}
-                    ></textarea>
+                      name='message'
+                      value={message}></textarea>
                   </div>
-                  <div className="col s12">
+                  <div className='col s12'>
                     {success ? (
-                      <span className="success">
+                      <span className='success'>
                         Your message has been sent
                       </span>
                     ) : (
-                      <button className="btn" type="submit">
+                      <button className='btn' type='submit'>
                         Send
                       </button>
                     )}

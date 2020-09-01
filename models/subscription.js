@@ -9,7 +9,7 @@ var subscriptionSchema = new Schema({
   endDate: Date,
   price: Number,
   frequency: String,
-  icon: String,
+  profileID: String,
 });
 
 var Subscription = mongoose.model("Subscription", subscriptionSchema);

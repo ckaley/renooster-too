@@ -48,23 +48,23 @@ class Signup extends React.Component {
   render() {
     return (
       <div className='container'>
-          <div className="row">
-            <div className="brand-header">
-              <img
-                src="/images/renoosterlogo.png"
-                alt="Renooster Logo"
-                id="renooster-logo"
-              />
-              <h1 className="renooster-title">Renooster</h1>
-            </div>
+        <div className='row'>
+          <div className='brand-header'>
+            <img
+              src='/images/renoosterlogo.png'
+              alt='Renooster Logo'
+              id='renooster-logo'
+            />
+            <h1 className='renooster-title'>Renooster</h1>
           </div>
-          <div className="row">
-            <div className="col m12 center-align">
-              <h4 className="tagline">
-                The easy way to manage your subscriptions!
-              </h4>
-            </div>
+        </div>
+        <div className='row'>
+          <div className='col m12 center-align'>
+            <h4 className='tagline'>
+              The easy way to manage your subscriptions!
+            </h4>
           </div>
+        </div>
         <div className='row'>
           <div className='col s12 l8 offset-l2'>
             <div className='form-panel'>
