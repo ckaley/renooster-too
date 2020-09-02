@@ -27,7 +27,8 @@ class Subscription extends React.Component {
     axios
       .get(`/api/subscriptions/${id}`)
       .then((res) => {
-        console.log(res.data);
+        console.log("THIS IS RES: " + res);
+        console.log("THIS IS RES.data.startdate: " + res.data.startDate);
       })
       .catch((err) => {
         console.log(err);
@@ -84,11 +85,13 @@ class Subscription extends React.Component {
     axios
       .get(`/api/subscriptions/${this.props.match.params.id}`)
       .then((res) => {
+        let newStartDate = new Date(res.data.startDate);
+        let newEndDate = new Date(res.data.endDate);
         this.setState({
           id: res.data._id,
           name: res.data.name,
-          startDate: "",
-          endDate: "",
+          startDate: newStartDate,
+          endDate: newEndDate,
           price: res.data.price,
           frequency: res.data.frequency,
         });

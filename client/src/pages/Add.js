@@ -5,6 +5,8 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+import moment from "moment-timezone";
+
 class Subscription extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +27,7 @@ class Subscription extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log("handleSubmit");
+    console.log("THIS IS THE STARTDATE =" + this.state.startDate);
     axios
       .post("/api/subscriptions", {
         name: this.state.name,
