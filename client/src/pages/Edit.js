@@ -66,7 +66,7 @@ class Subscription extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`/api/subscriptions/profile/${this.props.match.params.id}`)
+      .get(`/api/subscriptions/edit/${this.props.match.params.id}`)
       .then((res) => {
         let newStartDate = new Date(res.data.startDate);
         let newEndDate = new Date(res.data.endDate);
