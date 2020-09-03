@@ -7,12 +7,6 @@ var profileSchema = new Schema({
   lastName: { type: String },
   password: { type: String },
   email: { type: String },
-  fullName: {
-    type: String,
-    default: function () {
-      return this.fistName + " " + this.lastName;
-    },
-  },
 });
 
 var Profile = mongoose.model("Profile", profileSchema);

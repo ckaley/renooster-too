@@ -1,20 +1,38 @@
 // dependencies
-import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import moment from "moment-timezone";
-
 class Subscription extends React.Component {
-  state = {
-    name: "",
-    startDate: "",
-    endDate: "",
-    price: "",
-    frequency: "monthly",
-    profileID: "",
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: "",
+      name: "",
+      startDate: "",
+      endDate: "",
+      price: "",
+      frequency: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleStartDateChange = this.handleStartDateChange.bind(this);
+    this.handleEndDateChange = this.handleEndDateChange.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  editSubscription = (id) => {
+    axios
+      .get(`/api/subscriptions/${id}`)
+      .then((res) => {
+        console.log("THIS IS RES: " + res);
+        console.log("THIS IS RES.data.startdate: " + res.data.startDate);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   handleSubmit(event) {
@@ -34,7 +52,7 @@ class Subscription extends React.Component {
         console.log(response);
         if (response.status === 200) {
           console.log("A subscription has been updated!");
-          this.props.history.push("/subscriptions");
+          window.location.href = "/subscriptions";
         }
       })
       .catch((error) => {
@@ -42,12 +60,11 @@ class Subscription extends React.Component {
         console.log(error);
       });
   }
-
-  handleChange = (event) => {
+  handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  };
+  }
   handleStartDateChange = (date) => {
     this.setState({
       startDate: date,
@@ -68,13 +85,13 @@ class Subscription extends React.Component {
     axios
       .get(`/api/subscriptions/${this.props.match.params.id}`)
       .then((res) => {
-        // let newStartDate = new Date(res.data.startDate);
-        // let newEndDate = new Date(res.data.endDate);
+        let newStartDate = new Date(res.data.startDate);
+        let newEndDate = new Date(res.data.endDate);
         this.setState({
           id: res.data._id,
           name: res.data.name,
-          startDate: "",
-          endDate: "",
+          startDate: newStartDate,
+          endDate: newEndDate,
           price: res.data.price,
           frequency: res.data.frequency,
         });
@@ -83,12 +100,13 @@ class Subscription extends React.Component {
   }
 
   render() {
+    console.log(typeof this.state.startDate);
     return (
       <div className="container" id="newSubscription">
         <div className="row">
           <div className="col s12 l8 offset-l2">
             <div className="card-panel">
-              <h5 className="card-title">Edit a Subscription</h5>
+              <h5 className="card-title">Add a Subscription</h5>
               <div className="row">
                 <form className="col s12" onSubmit={this.handleSubmit}>
                   <div className="row">

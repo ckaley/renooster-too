@@ -10,15 +10,16 @@ const Subscriptions = (props) => {
   // state hook variables
   const [profile, setProfile] = useState({});
   const [subscriptions, setSubscriptions] = useState([]);
+  // destructure profile
+  const { firstName, lastName, _id } = profile;
 
   // get profile after component mounts
-  useEffect(() => {
-    axios
-      .get("/api/profile/")
-      .then((res) => setProfile(res.data))
-      .catch((err) => console.log(err));
-    // setProfile(profileJSON)
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/profile/")
+  //     .then((res) => setProfile(res.data))
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   // so we can call getSubscriptions more than once...upon first page load and after a subscription is deleted to render updated list of subscriptions.
   useEffect(() => {
@@ -27,8 +28,9 @@ const Subscriptions = (props) => {
 
   // get subscriptions after component mounts
   const getSubscriptions = () => {
+    console.log(props.profile._id);
     axios
-      .get("/api/subscriptions/")
+      .get(`/api/subscriptions/${props.profile._id}`)
       .then((res) => {
         console.log(res.data);
         setSubscriptions(res.data);
@@ -66,8 +68,8 @@ const Subscriptions = (props) => {
 
   return (
     <>
-      <div className='container' id='subscriptions'>
-        <div className='row'>
+      <div className="container" id="subscriptions">
+        <div className="row">
           {subscriptions.map((subscription, index) => {
             return (
               <SubscriptionCard

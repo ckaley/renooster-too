@@ -1,6 +1,6 @@
 // dependencies
-import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import React from "react";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,25 +8,19 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment-timezone";
 
 class Subscription extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      startDate: "",
-      endDate: "",
-      price: "",
-      frequency: "monthly",
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleStartDateChange = this.handleStartDateChange.bind(this);
-    this.handleEndDateChange = this.handleEndDateChange.bind(this);
-    this.handleOptionChange = this.handleOptionChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  state = {
+    name: "",
+    startDate: "",
+    endDate: "",
+    price: "",
+    frequency: "monthly",
+    profileID: "",
+  };
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     console.log("handleSubmit");
+    console.log("This is profileID:" + this.state.profileID);
     console.log("THIS IS THE STARTDATE =" + this.state.startDate);
     axios
       .post("/api/subscriptions", {
@@ -35,25 +29,27 @@ class Subscription extends React.Component {
         endDate: this.state.endDate,
         price: this.state.price,
         frequency: this.state.frequency,
+        profileID: this.state.profileID,
       })
       .then((response) => {
         console.log("login response: ");
         console.log(response);
         if (response.status === 200) {
           console.log("A subscription has been created!");
-          window.location.href = "/subscriptions";
+          //window.location.href = "/subscriptions";
+          this.props.history.push("/subscriptions");
         }
       })
       .catch((error) => {
         console.log("login error: ");
         console.log(error);
       });
-  }
-  handleChange(event) {
+  };
+  handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  }
+  };
   handleStartDateChange = (date) => {
     this.setState({
       startDate: date,
@@ -69,29 +65,36 @@ class Subscription extends React.Component {
       frequency: changeEvent.target.value,
     });
   };
+
+  componentDidMount() {
+    this.setState({
+      profileID: this.props.profile._id,
+    });
+  }
+
   render() {
     return (
-      <div className='container' id='newSubscription'>
-        <div className='row'>
-          <div className='col s12 l8 offset-l2'>
-            <div className='card-panel'>
-              <h5 className='card-title'>Add a Subscription</h5>
-              <div className='row'>
-                <form className='col s12' onSubmit={this.handleSubmit}>
-                  <div className='row'>
-                    <div className='input-field col s12'>
+      <div className="container" id="newSubscription">
+        <div className="row">
+          <div className="col s12 l8 offset-l2">
+            <div className="card-panel">
+              <h5 className="card-title">Add a Subscription</h5>
+              <div className="row">
+                <form className="col s12" onSubmit={this.handleSubmit}>
+                  <div className="row">
+                    <div className="input-field col s12">
                       <span>Name</span>
                       <input
-                        autoComplete='name'
-                        className='form-control'
-                        name='name'
-                        type='text'
+                        autoComplete="name"
+                        className="form-control"
+                        name="name"
+                        type="text"
                         value={this.state.name}
                         onChange={this.handleChange}
                       />
                     </div>
-                    <div className='row'>
-                      <div className='input-field col s12'>
+                    <div className="row">
+                      <div className="input-field col s12">
                         <span>Start Date</span>
                         <DatePicker
                           selected={this.state.startDate}
@@ -101,8 +104,8 @@ class Subscription extends React.Component {
                         />
                       </div>
                     </div>
-                    <div className='row'>
-                      <div className='input-field col s12'>
+                    <div className="row">
+                      <div className="input-field col s12">
                         <span>End Date</span>
                         <DatePicker
                           selected={this.state.endDate}
@@ -112,12 +115,12 @@ class Subscription extends React.Component {
                         />
                       </div>
                     </div>
-                    <div className='input-field col s12'>
+                    <div className="input-field col s12">
                       <span>Price</span>
                       <input
-                        autoComplete='price'
-                        name='price'
-                        type='text'
+                        autoComplete="price"
+                        name="price"
+                        type="text"
                         value={this.state.price}
                         onChange={this.handleChange}
                       />
@@ -127,11 +130,11 @@ class Subscription extends React.Component {
                       <p>
                         <label>
                           <input
-                            type='radio'
-                            value='weekly'
+                            type="radio"
+                            value="weekly"
                             checked={this.state.frequency === "weekly"}
                             onChange={this.handleOptionChange}
-                            name='frequency'
+                            name="frequency"
                           />
                           <span>Weekly</span>
                         </label>
@@ -139,11 +142,11 @@ class Subscription extends React.Component {
                       <p>
                         <label>
                           <input
-                            type='radio'
-                            value='monthly'
+                            type="radio"
+                            value="monthly"
                             checked={this.state.frequency === "monthly"}
                             onChange={this.handleOptionChange}
-                            name='frequency'
+                            name="frequency"
                           />
                           <span>Monthly</span>
                         </label>
@@ -151,20 +154,20 @@ class Subscription extends React.Component {
                       <p>
                         <label>
                           <input
-                            type='radio'
-                            value='annually'
+                            type="radio"
+                            value="annually"
                             checked={this.state.frequency === "annually"}
                             onChange={this.handleOptionChange}
-                            name='frequency'
+                            name="frequency"
                           />
                           <span>Anually</span>
                         </label>
                       </p>
                     </div>
-                    <button className='btn' type='submit'>
+                    <button className="btn" type="submit">
                       Submit
                     </button>
-                    <Link to='/' className='btn'>
+                    <Link to="/" className="btn">
                       Home
                     </Link>
                   </div>

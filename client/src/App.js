@@ -30,27 +30,35 @@ function App() {
 
   return (
     <Router>
-      <div id='app-content'>
+      <div id="app-content">
         <Navbar profile={profile} />
-        <div id='router-content'>
+        <div id="router-content">
           <Switch>
             <Route
               exact
-              path='/'
+              path="/"
               render={(props) => <Login {...props} setProfile={setProfile} />}
             />
-            <Route exact path='/signup' component={Signup} />
+            <Route exact path="/signup" component={Signup} />
             <Route
               exact
-              path='/subscriptions'
-              render={() => <Subscriptions profile={profile} />}
+              path="/subscriptions"
+              render={(props) => <Subscriptions {...props} profile={profile} />}
             />
-            <Route exact path='/contact' component={Contact} />
-            <Route exact path='/add' component={Add} />
-            <Route exact path='/edit/:id' component={Edit} />
-            <Route exact path='/expiring' component={Expiring} />
-            <Route exact path='/budgetTracker' component={BudgetTracker} />
-            <Route path='*' component={NotFound} />
+            <Route exact path="/contact" component={Contact} />
+            <Route
+              exact
+              path="/add"
+              render={(props) => <Add {...props} profile={profile} />}
+            />
+            <Route
+              exact
+              path="/edit/:id"
+              render={(props) => <Edit {...props} profile={profile} />}
+            />
+            <Route exact path="/expiring" component={Expiring} />
+            <Route exact path="/budgetTracker" component={BudgetTracker} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </div>
         <Footer profile={profile} />

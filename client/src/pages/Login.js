@@ -28,7 +28,7 @@ class Login extends React.Component {
       })
       .then((response) => {
         console.log("login response: ");
-        console.log(response);
+        console.log(response.data);
 
         this.props.setProfile(response.data);
 
@@ -55,58 +55,59 @@ class Login extends React.Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />;
     } else {
       return (
-        <div className='container'>
-          <div className='row'>
-            <div className='brand-header'>
+        <div className="container">
+          <div className="row">
+            <div className="brand-header">
               <img
-                src='/images/renoosterlogo.png'
-                alt='Renooster Logo'
-                id='renooster-logo'
+                src="/images/renoosterlogo.png"
+                alt="Renooster Logo"
+                id="renooster-logo"
               />
-              <h1 className='renooster-title'>Renooster</h1>
+              <h1 className="renooster-title">Renooster</h1>
             </div>
           </div>
-          <div className='row'>
-            <div className='col m12 center-align'>
-              <h4 className='tagline'>
+          <div className="row">
+            <div className="col m12 center-align">
+              <h4 className="tagline">
                 The easy way to manage your subscriptions!
               </h4>
             </div>
           </div>
-          <div className='row'>
-            <div className='col s12 l8 offset-l2'>
-              <div className='form-panel'>
-                <h5 className='form-title'>Login to Renooster</h5>
-                <div className='row'>
-                  <form className='col s12'>
-                    <div className='row'>
-                      <div className='input-field col s12'>
+          <div className="row">
+            <div className="col s12 l8 offset-l2">
+              <div className="form-panel">
+                <h5 className="form-title">Login to Renooster</h5>
+                <div className="row">
+                  <form className="col s12">
+                    <div className="row">
+                      <div className="input-field col s12">
                         <span>Email</span>
                         <input
-                          autoComplete='email'
-                          name='email'
-                          type='email'
+                          autoComplete="email"
+                          name="email"
+                          type="email"
                           value={this.state.email}
                           onChange={this.handleChange}
                         />
                       </div>
-                      <div className='input-field col s12'>
+                      <div className="input-field col s12">
                         <span>Password</span>
                         <input
-                          autoComplete='password'
-                          name='password'
-                          type='text'
+                          autoComplete="password"
+                          name="password"
+                          type="text"
                           value={this.state.password}
                           onChange={this.handleChange}
                         />
                       </div>
                       <Link
-                        to='/subscriptions'
-                        className='btn'
-                        onClick={this.handleSubmit}>
+                        to="/subscriptions"
+                        className="btn"
+                        onClick={this.handleSubmit}
+                      >
                         Login
                       </Link>
-                      <Link to='/signup' className='btn'>
+                      <Link to="/signup" className="btn">
                         Sign-up
                       </Link>
                     </div>
