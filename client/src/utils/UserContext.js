@@ -4,6 +4,7 @@ const UserContext = React.createContext({
   firstName: "",
   LastName: "",
   loggedIn: false,
+  profileID: "",
   // handleBtnClick: () => {}
 });
 

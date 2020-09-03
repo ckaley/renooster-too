@@ -3,6 +3,7 @@ import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = ({ profile }) => {
+  // return null;
   // // destructure profile
   const { firstName, lastName } = profile;
 
@@ -14,35 +15,35 @@ const Navbar = ({ profile }) => {
     return null;
   } else {
     return (
-      <nav className="navbar">
-        <div className="row">
-          <div className="col s12">
-            <Link to="/" className="brand-logo">
+      <nav className='navbar'>
+        <div className='row'>
+          <div className='col s12'>
+            <Link to='/' className='brand-logo'>
               {firstName} {lastName}
             </Link>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <ul id='nav-mobile' className='right hide-on-med-and-down'>
               <li>
-                <NavLink exact to="/subscriptions">
+                <NavLink exact to='/subscriptions'>
                   Subscriptions
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/add">
+                <NavLink exact to='/add'>
                   Add
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/expiring">
+                <NavLink exact to='/expiring'>
                   Expiring Soon
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/contact">
+                <NavLink exact to='/contact'>
                   Contact
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/">
+                <NavLink exact to='/'>
                   Sign Out
                 </NavLink>
               </li>

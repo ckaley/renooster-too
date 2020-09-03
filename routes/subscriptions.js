@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  db.Subscription.update({ _id: req.params.id })
+  db.Subscription.findByIdAndUpdate({ _id: req.params.id }, { ...req.body })
     .then((subscription) => res.status(200).json(subscription))
     .catch((err) => {
       console.log(err);

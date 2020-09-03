@@ -66,8 +66,8 @@ const Subscriptions = (props) => {
 
   return (
     <>
-      <div className="container" id="subscriptions">
-        <div className="row">
+      <div className='container' id='subscriptions'>
+        <div className='row'>
           {subscriptions.map((subscription, index) => {
             return (
               <SubscriptionCard

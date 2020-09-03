@@ -28,27 +28,26 @@ import "./css/styles.css";
 function App() {
   const [profile, setProfile] = useState({});
 
-  // get profile after component mounts
-  useEffect(() => {
-    axios
-      .get("/api/profile/")
-      .then((res) => setProfile(res.data))
-      .catch((err) => console.log(err));
-    // setProfile(profileJSON)
-  }, []);
-
   return (
     <Router>
       <div id='app-content'>
         <Navbar profile={profile} />
         <div id='router-content'>
           <Switch>
-            <Route exact path='/' component={Login} />
+            <Route
+              exact
+              path='/'
+              render={(props) => <Login {...props} setProfile={setProfile} />}
+            />
             <Route exact path='/signup' component={Signup} />
-            <Route exact path='/subscriptions' component={Subscriptions} />
+            <Route
+              exact
+              path='/subscriptions'
+              render={() => <Subscriptions profile={profile} />}
+            />
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/add' component={Add} />
-            <Route exact path='/edit' component={Edit} />
+            <Route exact path='/edit/:id' component={Edit} />
             <Route exact path='/expiring' component={Expiring} />
             <Route exact path='/budgetTracker' component={BudgetTracker} />
             <Route path='*' component={NotFound} />
