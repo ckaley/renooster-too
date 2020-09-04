@@ -19,9 +19,6 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// data
-// import profileJSON from './data/profile.json'
-
 // styles
 import "./css/styles.css";
 
@@ -56,8 +53,16 @@ function App() {
               path="/edit/:id"
               render={(props) => <Edit {...props} profile={profile} />}
             />
-            <Route exact path="/expiring" component={Expiring} />
-            <Route exact path="/budgetTracker" component={BudgetTracker} />
+            <Route
+              exact
+              path="/expiring"
+              render={(props) => <Expiring {...props} profile={profile} />}
+            />
+            <Route
+              exact
+              path="/budgetTracker"
+              render={(props) => <BudgetTracker {...props} profile={profile} />}
+            />
             <Route path="*" component={NotFound} />
           </Switch>
         </div>

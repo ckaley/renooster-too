@@ -5,7 +5,7 @@ var db = require("../models");
 // new router
 var router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
   // Get Today's Date
   var filterDate = new Date();
   // Number of days to add for the filter
@@ -14,7 +14,9 @@ router.get("/", (req, res) => {
   filterDate.setDate(filterDate.getDate() + numberOfDaysToAdd);
 
   // Retrieve Subscriptions that are do to expire in 30 days or less
-  db.Subscription.find({ endDate: { $lte: filterDate } })
+  db.Subscription.find({
+    $and: [{ profileID: req.params.id }, { endDate: { $lte: filterDate } }],
+  })
     .then((subscriptions) => res.status(200).json(subscriptions))
     .catch((err) => res.status(404).json(err));
 });
