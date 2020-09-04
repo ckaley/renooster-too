@@ -13,14 +13,6 @@ const Subscriptions = (props) => {
   // destructure profile
   const { firstName, lastName, _id } = profile;
 
-  // get profile after component mounts
-  // useEffect(() => {
-  //   axios
-  //     .get("/api/profile/")
-  //     .then((res) => setProfile(res.data))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   // so we can call getSubscriptions more than once...upon first page load and after a subscription is deleted to render updated list of subscriptions.
   useEffect(() => {
     getSubscriptions();
