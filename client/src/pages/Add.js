@@ -36,7 +36,6 @@ class Subscription extends React.Component {
         console.log(response);
         if (response.status === 200) {
           console.log("A subscription has been created!");
-          //window.location.href = "/subscriptions";
           this.props.history.push("/subscriptions");
         }
       })
@@ -127,18 +126,6 @@ class Subscription extends React.Component {
                     </div>
                     <div>
                       <span>Frequency</span>
-                      <p>
-                        <label>
-                          <input
-                            type="radio"
-                            value="weekly"
-                            checked={this.state.frequency === "weekly"}
-                            onChange={this.handleOptionChange}
-                            name="frequency"
-                          />
-                          <span>Weekly</span>
-                        </label>
-                      </p>
                       <p>
                         <label>
                           <input

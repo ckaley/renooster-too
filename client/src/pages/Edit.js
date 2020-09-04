@@ -5,22 +5,18 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment-timezone";
-
 class Subscription extends React.Component {
   state = {
-    id: "",
     name: "",
     startDate: "",
     endDate: "",
     price: "",
-    frequency: "",
+    frequency: "monthly",
     profileID: "",
   };
-
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
-
-    console.log("handle Edit Submit");
+    console.log("handleSubmit");
     axios
       .put(`/api/subscriptions/${this.state.id}`, {
         name: this.state.name,
@@ -28,7 +24,6 @@ class Subscription extends React.Component {
         endDate: this.state.endDate,
         price: this.state.price,
         frequency: this.state.frequency,
-        profileID: this.state.profileID,
       })
       .then((response) => {
         console.log("login response: ");
@@ -42,8 +37,7 @@ class Subscription extends React.Component {
         console.log("login error: ");
         console.log(error);
       });
-  }
-
+  };
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -64,27 +58,23 @@ class Subscription extends React.Component {
       frequency: changeEvent.target.value,
     });
   };
-
-  componentDidMount() {
+  componentDidMount = () => {
     axios
-      .get(`/api/subscriptions/${this.props.match.params.id}`)
+      .get(`/api/subscriptions/edit/${this.props.match.params.id}`)
       .then((res) => {
-        // let newStartDate = new Date(res.data.startDate);
-        // let newEndDate = new Date(res.data.endDate);
+        let newStartDate = new Date(res.data.startDate);
+        let newEndDate = new Date(res.data.endDate);
         this.setState({
           id: res.data._id,
           name: res.data.name,
-          startDate: "",
-          endDate: "",
+          startDate: newStartDate,
+          endDate: newEndDate,
           price: res.data.price,
           frequency: res.data.frequency,
-          profileID: res.data.profileID,
         });
-        console.log(this.state);
       })
       .catch((err) => console.log(err));
-  }
-
+  };
   render() {
     return (
       <div className="container" id="newSubscription">
@@ -144,18 +134,6 @@ class Subscription extends React.Component {
                         <label>
                           <input
                             type="radio"
-                            value="weekly"
-                            checked={this.state.frequency === "weekly"}
-                            onChange={this.handleOptionChange}
-                            name="frequency"
-                          />
-                          <span>Weekly</span>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          <input
-                            type="radio"
                             value="monthly"
                             checked={this.state.frequency === "monthly"}
                             onChange={this.handleOptionChange}
@@ -193,5 +171,4 @@ class Subscription extends React.Component {
     );
   }
 }
-
 export default Subscription;
