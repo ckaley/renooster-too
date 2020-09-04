@@ -12,7 +12,7 @@ class Subscription extends React.Component {
     name: "",
     startDate: "",
     endDate: "",
-    price: "",
+    price: 0,
     frequency: "monthly",
     profileID: "",
   };
