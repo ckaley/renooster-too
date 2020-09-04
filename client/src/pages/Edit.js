@@ -4,9 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 import moment from "moment-timezone";
-
 class Subscription extends React.Component {
   state = {
     name: "",
@@ -16,10 +14,8 @@ class Subscription extends React.Component {
     frequency: "monthly",
     profileID: "",
   };
-
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
-
     console.log("handleSubmit");
     axios
       .put(`/api/subscriptions/${this.state.id}`, {
@@ -41,8 +37,7 @@ class Subscription extends React.Component {
         console.log("login error: ");
         console.log(error);
       });
-  }
-
+  };
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -63,8 +58,7 @@ class Subscription extends React.Component {
       frequency: changeEvent.target.value,
     });
   };
-
-  componentDidMount() {
+  componentDidMount = () => {
     axios
       .get(`/api/subscriptions/edit/${this.props.match.params.id}`)
       .then((res) => {
@@ -80,8 +74,7 @@ class Subscription extends React.Component {
         });
       })
       .catch((err) => console.log(err));
-  }
-
+  };
   render() {
     return (
       <div className='container' id='newSubscription'>
@@ -190,5 +183,4 @@ class Subscription extends React.Component {
     );
   }
 }
-
 export default Subscription;

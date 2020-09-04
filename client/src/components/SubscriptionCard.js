@@ -47,37 +47,38 @@ const SubscriptionCard = ({
   }
 
   return (
-    <div className='col s12 m6 l4'>
-      <div className='card blue-grey darken-1'>
-        <div className='card-image'>
-          <img src={icon} width='150' height='150' />
+    <div className="col s12 m6 l4">
+      <div className="card blue-grey darken-1">
+        <div className="card-image">
+          <img src={icon} width="150" height="150" />
         </div>
-        <div className='card-content white-text'>
-          <span className='card-title'>{name}</span>
-          <p className='card-text'>
+        <div className="card-content white-text">
+          <span className="card-title">{name}</span>
+          <p className="card-text">
             Start Date: <i>{Moment(startDate).format("MM-DD-YYYY")}</i>
           </p>
-          <p className='card-text'>
+          <p className="card-text">
             End Date: <i>{Moment(endDate).format("MM-DD-YYYY")}</i>
           </p>
-          <p className='card-text'>
+          <p className="card-text">
             Price: <i>${price.toFixed(2)}</i>
           </p>
-          <p className='card-text'>
+          <p className="card-text">
             Frequency: <i>{frequency}</i>
           </p>
         </div>
-        <div className='card-action'>
-          <Link className='btn blue' to={`edit/${_id}`}>
+        <div className="card-action">
+          <Link className="btn blue" to={`edit/${_id}`}>
             Edit
           </Link>
           <button
-            className='btn'
+            className="btn"
             id={_id}
             onClick={(event) => {
               console.log(event.target);
               deleteSubscription(_id);
-            }}>
+            }}
+          >
             Delete
           </button>
         </div>
