@@ -43,21 +43,22 @@ const SubscriptionCard = ({
         "https://img.apksum.com/81/com.amazon.avod.thirdpartyclient/3.0.276.245/icon.png";
       break;
     default:
-      icon = null;
+      icon = "/images/renoosterlogo.png";
   }
 
   return (
-    <div className="col s12 m6 l4">
-      <div className="card blue-grey darken-1">
+    <div className="col s12 m6 l4 xl3">
+      <div className="card">
+        {/* <div className="card blue-grey darken-1"> */}
         <div className="card-image">
-          <img src={icon} width="150" height="150" />
+          <img src={icon} />
         </div>
-        <div className="card-content white-text">
+        <div className="card-content">
           <span className="card-title">{name}</span>
           <p className="card-text">
             Start Date: <i>{Moment(startDate).format("MM-DD-YYYY")}</i>
           </p>
-          <p className="card-text">
+          <p className="card-text" id="expire-warning">
             End Date: <i>{Moment(endDate).format("MM-DD-YYYY")}</i>
           </p>
           <p className="card-text">
@@ -68,7 +69,7 @@ const SubscriptionCard = ({
           </p>
         </div>
         <div className="card-action">
-          <Link className="btn blue" to={`edit/${_id}`}>
+          <Link className="btn" id="btn-edit" to={`edit/${_id}`}>
             Edit
           </Link>
           <button

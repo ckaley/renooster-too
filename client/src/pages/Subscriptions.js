@@ -34,13 +34,15 @@ const Subscriptions = (props) => {
 
   const deleteSubscription = (id) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
+      title: "Are you sure you want to Remooooove it?",
+      text: "This subscription will be permanently deleted!",
+      imageUrl: "/images/warningcow.png",
+      imageAlt: 'Renooster Cow',
+      // icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonColor: "#D52B14",
+      cancelButtonColor: "#3BB5E0",
+      confirmButtonText: "Yes, remoooove it!",
     }).then(async (result) => {
       if (result.value) {
         await axios

@@ -11,8 +11,8 @@ const Footer = () => {
   return (
     <footer className="page-footer">
       <div className="container">
-        <div className="row">
-          <div className="col s12 m6">
+        <div className="row ">
+          <div className="col s12 m6 l12">
             <span className="copyright">{`© Copyright ${new Date().getFullYear()} Renooster, Inc.`}</span>
           </div>
         </div>

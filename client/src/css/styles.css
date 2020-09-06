@@ -46,26 +46,60 @@ body {
 
 .page-footer {
   background-color: black;
-  height: 70px;
+  height: 65px;
+  text-align: center;
+  padding-top: 15px;
 }
 
 .btn {
-  background-color: red;
+  border-radius: 10px;
+  background-color: #d52b14;
   margin-right: 10px;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #339933;
 }
 
 .card {
-  margin: 50px 0;
-  border-width: 1px;
-  border-style: solid solid solid solid;
-  border-color: #000;
+  border-radius: 15px;
+  background-color: white;
+  width: 250px;
+  margin: 25px 5px 0px 5px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.card-image {
+  width: 175px;
+  height: 175px;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-title {
+  font-weight: 600 !important;
+}
+
+.card-action {
+  border-radius: 0px 0px 15px 15px !important;
+}
+
+.card-panel {
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid #000;
+  padding: 15px 30px 0px 30px;
+  margin-top: 25px;
 }
 
 .form-panel {
+  border-radius: 15px;
   background-color: white;
-  border-width: 1px;
-  border-style: solid solid solid solid;
-  border-color: #000;
+  border: 1px solid #000;
   padding: 15px 30px 0px 30px;
 }
 
@@ -84,7 +118,15 @@ body {
   font-weight: 600;
 }
 
-.expireWarning {
+#btn-edit {
+  background-color: #3c4bdd;
+}
+
+#btn-edit:hover {
+  background-color: #339933;
+}
+
+#expire-warning {
   color: #d52b14;
 }
 
