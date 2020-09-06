@@ -3,6 +3,7 @@ var express = require("express");
 var nodemailer = require("nodemailer");
 var db = require("../models");
 const { Mongoose } = require("mongoose");
+var moment = require("moment");
 
 // new router
 var router = express.Router();
@@ -58,7 +59,9 @@ router.get("/", (req, res) => {
         lastName = expiredSubscriptions[i].user[0].lastName;
         email = expiredSubscriptions[i].user[0].email;
         expSubscription = expiredSubscriptions[i].name;
-        expireDate = expiredSubscriptions[i].endDate;
+        expireDate = moment(expiredSubscriptions[i].endDate).format(
+          "MM/DD/YYYY"
+        );
 
         // define mail options
         var mailOptions = {
@@ -108,6 +111,7 @@ router.get("/", (req, res) => {
           }
           console.log("Message Sent");
         });
+        console.log();
       }
 
       res.status(200).json(expiredSubscriptions);
