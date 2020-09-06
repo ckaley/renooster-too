@@ -36,8 +36,6 @@ router.get("/", (req, res) => {
     },
   ])
     .then((expiredSubscriptions) => {
-      console.log("I am sending emails!");
-
       var firstName = "";
       var lastName = "";
       var email = "";
@@ -65,7 +63,7 @@ router.get("/", (req, res) => {
 
         // define mail options
         var mailOptions = {
-          to: process.env.EMAIL,
+          to: email,
           subject: "You have a Subscription that is about to expire! ",
           text:
             firstName +
@@ -107,14 +105,16 @@ router.get("/", (req, res) => {
         // send mail
         transporter.sendMail(mailOptions, (err, result) => {
           if (err) {
-            console.log("falied to send message");
+            console.log("Falied to send message");
           }
           console.log("Message Sent");
         });
         console.log();
       }
 
-      res.status(200).json(expiredSubscriptions);
+      res
+        .status(200)
+        .json("Successfully sent " + expiredSubscriptions.length + " messages");
     })
     .catch((err) => res.status(404).json(err));
 });
