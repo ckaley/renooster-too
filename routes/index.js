@@ -9,6 +9,7 @@ var router = express.Router();
 router.use("/budgetTracker", require("./budgetTracker"));
 router.use("/contact", require("./contact"));
 router.use("/expiring", require("./expiring"));
+router.use("/emailreminder", require("./emailReminder"));
 router.use("/login", require("./login"));
 router.use("/profile", require("./profile"));
 router.use("/subscriptions", require("./subscriptions"));
