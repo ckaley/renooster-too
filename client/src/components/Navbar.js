@@ -40,6 +40,11 @@ const Navbar = ({ profile }) => {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink exact to="/budgetTracker">
+                    Budget
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink exact to="/contact">
                     Contact
                   </NavLink>
