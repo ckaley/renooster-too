@@ -134,18 +134,6 @@ class Subscription extends React.Component {
                         <label>
                           <input
                             type="radio"
-                            value="weekly"
-                            checked={this.state.frequency === "weekly"}
-                            onChange={this.handleOptionChange}
-                            name="frequency"
-                          />
-                          <span>Weekly</span>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          <input
-                            type="radio"
                             value="monthly"
                             checked={this.state.frequency === "monthly"}
                             onChange={this.handleOptionChange}
