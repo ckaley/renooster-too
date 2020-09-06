@@ -15,6 +15,9 @@ const Subscriptions = (props) => {
 
   // so we can call getSubscriptions more than once...upon first page load and after a subscription is deleted to render updated list of subscriptions.
   useEffect(() => {
+    Swal.fire("expiring!");
+    const audioEl = document.getElementsByClassName("audio-element")[0];
+    audioEl.play();
     getSubscriptions();
   }, []);
 
@@ -60,6 +63,9 @@ const Subscriptions = (props) => {
 
   return (
     <>
+      <audio className="audio-element">
+        <source src="/sounds/cockadoodle.mp3"></source>
+      </audio>
       <div className="container" id="subscriptions">
         <div className="row">
           {subscriptions.map((subscription, index) => {
