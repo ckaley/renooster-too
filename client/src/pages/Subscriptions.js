@@ -33,11 +33,13 @@ const Subscriptions = (props) => {
   };
 
   const deleteSubscription = (id) => {
+    const audioEl = document.getElementsByClassName("audio-element")[0];
+    audioEl.play();
     Swal.fire({
       title: "Are you sure you want to Remooooove it?",
       text: "This subscription will be permanently deleted!",
       imageUrl: "/images/warningcow.png",
-      imageAlt: 'Renooster Cow',
+      imageAlt: "Renooster Cow",
       // icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#D52B14",
@@ -62,6 +64,9 @@ const Subscriptions = (props) => {
 
   return (
     <>
+      <audio className="audio-element">
+        <source src="/sounds/cowmoo.mp3"></source>
+      </audio>
       <div className="container" id="subscriptions">
         <div className="row">
           {subscriptions.map((subscription, index) => {
