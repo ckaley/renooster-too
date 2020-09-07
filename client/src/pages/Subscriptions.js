@@ -26,6 +26,7 @@ const Subscriptions = (props) => {
       .then((res) => {
         console.log(res.data);
         setSubscriptions(res.data);
+        props.handleChange(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -64,11 +65,11 @@ const Subscriptions = (props) => {
 
   return (
     <>
-      <audio className="audio-element">
-        <source src="/sounds/cowmoo.mp3"></source>
+      <audio className='audio-element'>
+        <source src='/sounds/cowmoo.mp3'></source>
       </audio>
-      <div className="container" id="subscriptions">
-        <div className="row">
+      <div className='container' id='subscriptions'>
+        <div className='row'>
           {subscriptions.map((subscription, index) => {
             return (
               <SubscriptionCard
