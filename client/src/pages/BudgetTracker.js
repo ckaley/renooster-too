@@ -1,7 +1,7 @@
 // dependencies
 import React, { Component } from "react";
 import axios from "axios";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 class BudgetTracker extends Component {
   constructor(props) {
@@ -70,6 +70,20 @@ class BudgetTracker extends Component {
           data: this.state.myArray,
           fill: true, // Don't fill area under the line
           borderColor: "red", // Line color
+          backgroundColor: [
+            "green",
+            "red",
+            "blue",
+            "green",
+            "red",
+            "blue",
+            "green",
+            "red",
+            "blue",
+            "green",
+            "red",
+            "blue",
+          ],
         },
       ],
       options: {
@@ -86,13 +100,17 @@ class BudgetTracker extends Component {
     };
 
     return (
-      <div className='card' style={{ width: 1200, height: 740 }}>
-        <div>
-          <h1>Expense Chart</h1>
+      <div className='container'>
+        <div
+          className='card'
+          style={{ width: 1200, height: 740, alignSelf: "center" }}>
+          <div>
+            <h1>Expense Chart</h1>
+          </div>
+          <article className='canvas-container'>
+            <Bar data={data} />
+          </article>
         </div>
-        <article className='canvas-container'>
-          <Line data={data} />
-        </article>
       </div>
     );
   }
