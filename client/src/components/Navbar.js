@@ -21,6 +21,11 @@ const Navbar = ({ profile }) => {
           <div className="row">
             <div className="col s12">
               <Link to="/subscriptions" className="brand-logo center">
+              <img
+                src="/images/navbar-logo.png"
+                alt="Renooster Logo"
+                id="navbar-logo"
+              />
                 Hello {firstName}!
               </Link>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
@@ -30,13 +35,13 @@ const Navbar = ({ profile }) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink exact to="/add">
-                    Add
+                  <NavLink exact to="/expiring">
+                    Expiring Soon
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink exact to="/expiring">
-                    Expiring Soon
+                  <NavLink exact to="/add">
+                    Add
                   </NavLink>
                 </li>
                 <li>

@@ -147,15 +147,15 @@ class Subscription extends React.Component {
                             onChange={this.handleOptionChange}
                             name="frequency"
                           />
-                          <span>Anually</span>
+                          <span>Annually</span>
                         </label>
                       </p>
                     </div>
                     <button className="btn" type="submit">
                       Submit
                     </button>
-                    <Link to="/" className="btn">
-                      Home
+                    <Link to="/subscriptions" className="btn">
+                      Cancel
                     </Link>
                   </div>
                 </form>

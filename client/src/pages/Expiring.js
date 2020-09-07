@@ -15,7 +15,16 @@ const Subscriptions = (props) => {
 
   // so we can call getSubscriptions more than once...upon first page load and after a subscription is deleted to render updated list of subscriptions.
   useEffect(() => {
-    Swal.fire("expiring!");
+    //Swal.fire("expiring!");
+    Swal.fire({
+      title: "It's Time to Cock-a-doodle-Renew!",
+      //text: 'Modal with a custom image.',
+      imageUrl: "/images/renewrooster.png",
+      //imageWidth: 400,
+      //imageHeight: 200,
+      confirmButtonColor: "#D52B14",
+      imageAlt: "Renooster Rooster",
+    });
     const audioEl = document.getElementsByClassName("audio-element")[0];
     audioEl.play();
     getSubscriptions();
@@ -36,20 +45,28 @@ const Subscriptions = (props) => {
   };
 
   const deleteSubscription = (id) => {
+    const audioEl = document.getElementsByClassName("audio-element")[0];
+    audioEl.play();
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
+      title: "Are you sure you want to Remooooove it?",
+      text: "This subscription will be permanently deleted!",
+      imageUrl: "/images/warningcow.png",
+      imageAlt: "Renooster Cow",
+      // icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonColor: "#D52B14",
+      cancelButtonColor: "#3C4BDD",
+      confirmButtonText: "Yes, remoooove it!",
     }).then(async (result) => {
       if (result.value) {
         await axios
           .delete(`/api/subscriptions/${id}`)
           .then((res) => {
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            Swal.fire(
+              "Deleted!",
+              "Your subscription has been deleted.",
+              "success"
+            );
           })
           .catch((err) => {
             Swal.fire("Sorry something went wrong. Please try again.", "error");
@@ -66,7 +83,7 @@ const Subscriptions = (props) => {
       <audio className="audio-element">
         <source src="/sounds/cockadoodle.mp3"></source>
       </audio>
-      <div className="container" id="subscriptions">
+      <div className="container">
         <div className="row">
           {subscriptions.map((subscription, index) => {
             return (

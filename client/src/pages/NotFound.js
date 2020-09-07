@@ -6,7 +6,9 @@ const NotFound = () => {
         <div className="container" id="not-found">
             <div className="row">
                 <div className="col s12">
-                    <span>404 Not Found</span>
+                    <div className="error-page">
+                    <span>404: Page Not Found!</span>
+                    </div>
                 </div>
             </div>
         </div>
