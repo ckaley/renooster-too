@@ -15,17 +15,13 @@ const Subscriptions = (props) => {
 
   // so we can call getSubscriptions more than once...upon first page load and after a subscription is deleted to render updated list of subscriptions.
   useEffect(() => {
-    //Swal.fire("expiring!");
     Swal.fire({
-      title: "It's Time to Cock-a-doodle-Renew!",
-      //text: 'Modal with a custom image.',
+      title: "It's Time to <br> Cock-a-doodle-Renew!",
       imageUrl: "/images/renewrooster.png",
-      //imageWidth: 400,
-      //imageHeight: 200,
       confirmButtonColor: "#D52B14",
       imageAlt: "Renooster Rooster",
     });
-    const audioEl = document.getElementsByClassName("audio-element")[0];
+    const audioEl = document.getElementsByClassName("audio-element-rooster")[0];
     audioEl.play();
     getSubscriptions();
   }, []);
@@ -45,8 +41,8 @@ const Subscriptions = (props) => {
   };
 
   const deleteSubscription = (id) => {
-    const audioEl = document.getElementsByClassName("audio-element")[0];
-    audioEl.play();
+    // const audioEl = document.getElementsByClassName("audio-element-moo")[0];
+    // audioEl.play();
     Swal.fire({
       title: "Are you sure you want to Remooooove it?",
       text: "This subscription will be permanently deleted!",
@@ -80,7 +76,7 @@ const Subscriptions = (props) => {
 
   return (
     <>
-      <audio className="audio-element">
+      <audio className="audio-element-rooster">
         <source src="/sounds/cockadoodle.mp3"></source>
       </audio>
       <div className="container">
@@ -94,8 +90,8 @@ const Subscriptions = (props) => {
               />
             );
           })}
+          </div>
         </div>
-      </div>
     </>
   );
 };

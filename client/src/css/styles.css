@@ -1,5 +1,5 @@
 body {
-  background-image: url("/images/renoosteranimals_bg.png");
+  background-image: url("/images/renooster_bg.png");
   background-size: cover;
   background-color: #3bb5e0;
   background-repeat: no-repeat;
@@ -9,13 +9,21 @@ body {
   font-weight: 600;
 }
 
-.container {
-  align-items: center;
-}
-
 .navbar {
   background-color: black;
-  height: 10 0px;
+  /* height: 10 0px; */
+}
+
+.brand-logo {
+  display: inline-block;
+  height: 100%;
+}
+
+.brand-logo > img {
+  vertical-align: middle;
+  width: 55px;
+  height: 55px;
+  margin: -7px 10px 0px 0px;
 }
 
 .brand-header {
@@ -96,6 +104,11 @@ body {
   margin-top: 25px;
 }
 
+/* .subCards {
+  display: flex;
+  justify-content: center;
+} */
+
 .expire-subs {
   display: block;
   margin-left: auto;
@@ -145,12 +158,6 @@ body {
   width: 120px;
   height: 120px;
   margin-right: 20px;
-}
-
-#navbar-logo {
-  width: 60px;
-  height: 60px;
-  margin: 2px 10px 0px 0px;
 }
 
 #app-content {

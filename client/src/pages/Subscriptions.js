@@ -50,11 +50,7 @@ const Subscriptions = (props) => {
         await axios
           .delete(`/api/subscriptions/${id}`)
           .then((res) => {
-            Swal.fire(
-              "Deleted!",
-              "Your subscription has been deleted.",
-              "success"
-            );
+            Swal.fire("Deleted!", "Your subscription has been deleted.", "success");
           })
           .catch((err) => {
             Swal.fire("Sorry something went wrong. Please try again.", "error");
@@ -71,7 +67,7 @@ const Subscriptions = (props) => {
       <audio className="audio-element">
         <source src="/sounds/cowmoo.mp3"></source>
       </audio>
-      <div className="container" id="subscriptions">
+      <div className="container">
         <div className="row">
           {subscriptions.map((subscription, index) => {
             return (
