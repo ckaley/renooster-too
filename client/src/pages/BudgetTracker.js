@@ -51,6 +51,10 @@ class BudgetTracker extends Component {
   render() {
     const data = {
       labels: [
+        "September",
+        "October",
+        "November",
+        "December",
         "January",
         "February",
         "March",
@@ -59,10 +63,6 @@ class BudgetTracker extends Component {
         "June",
         "July",
         "August",
-        "September",
-        "October",
-        "November",
-        "December",
       ],
       datasets: [
         {
