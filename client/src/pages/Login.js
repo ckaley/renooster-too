@@ -104,7 +104,7 @@ class Login extends React.Component {
                         <input
                           autoComplete="password"
                           name="password"
-                          type="text"
+                          type="password"
                           value={this.state.password}
                           onChange={this.handleChange}
                         />
