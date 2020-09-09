@@ -8,7 +8,7 @@ var moment = require("moment");
 // new router
 var router = express.Router();
 
-router.get("/", (req, res) => {
+router.post("/", (req, res) => {
   // Get Today's Date
   var filterDate = new Date();
   // Number of days to add for the filter
@@ -114,7 +114,7 @@ router.get("/", (req, res) => {
 
       res
         .status(200)
-        .json("Successfully sent " + expiredSubscriptions.length + " messages");
+        .send("Successfully sent " + expiredSubscriptions.length + " messages");
     })
     .catch((err) => res.status(404).json(err));
 });
