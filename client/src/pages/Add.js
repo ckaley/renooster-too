@@ -94,7 +94,7 @@ class Subscription extends React.Component {
                     </div>
                     <div className="row">
                       <div className="input-field col s12">
-                        <span>Start Date</span>
+                        <span>Start Date: </span>
                         <DatePicker
                           selected={this.state.startDate}
                           onSelect={this.handleSelect}
@@ -105,7 +105,7 @@ class Subscription extends React.Component {
                     </div>
                     <div className="row">
                       <div className="input-field col s12">
-                        <span>End Date</span>
+                        <span>End Date: </span>
                         <DatePicker
                           selected={this.state.endDate}
                           onSelect={this.handleSelect}
@@ -147,15 +147,15 @@ class Subscription extends React.Component {
                             onChange={this.handleOptionChange}
                             name="frequency"
                           />
-                          <span>Anually</span>
+                          <span>Annually</span>
                         </label>
                       </p>
                     </div>
                     <button className="btn" type="submit">
                       Submit
                     </button>
-                    <Link to="/" className="btn">
-                      Home
+                    <Link to="/subscriptions" className="btn">
+                      Cancel
                     </Link>
                   </div>
                 </form>

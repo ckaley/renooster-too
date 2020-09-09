@@ -1,6 +1,7 @@
 // dependencies
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import M from  'materialize-css/dist/js/materialize.min.js';
 import axios from "axios";
 
 // page components
@@ -13,7 +14,6 @@ import Add from "./pages/Add";
 import Expiring from "./pages/Expiring";
 import BudgetTracker from "./pages/BudgetTracker";
 import NotFound from "./pages/NotFound";
-// import Signup from "./components/Sign-Up";
 
 // components
 import Navbar from "./components/Navbar";
@@ -63,7 +63,10 @@ function App() {
               path="/budgetTracker"
               render={(props) => <BudgetTracker {...props} profile={profile} />}
             />
-            <Route path="*" component={NotFound} />
+            <Route
+              path="*"
+              render={(props) => <NotFound {...props} profile={profile} />}
+            />
           </Switch>
         </div>
         <Footer profile={profile} />
