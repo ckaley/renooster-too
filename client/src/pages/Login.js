@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 class Login extends React.Component {
   constructor(props) {
@@ -30,9 +31,17 @@ class Login extends React.Component {
         console.log("login response: ");
         console.log(response.data);
 
-        this.props.setProfile(response.data);
+        if (response.data) {
+          this.props.setProfile(response.data);
 
-        this.props.history.push("/subscriptions");
+          this.props.history.push("/subscriptions");
+        } else {
+          Swal.fire(
+            "Incorrect email address!",
+            "Please try again or sign-up for an account.",
+            "error"
+          );
+        }
       })
       .catch((error) => {
         console.log("login error: ");

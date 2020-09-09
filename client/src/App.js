@@ -1,6 +1,7 @@
 // dependencies
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import M from  'materialize-css/dist/js/materialize.min.js';
 import axios from "axios";
 
 // page components
@@ -13,7 +14,6 @@ import Add from "./pages/Add";
 import Expiring from "./pages/Expiring";
 import BudgetTracker from "./pages/BudgetTracker";
 import NotFound from "./pages/NotFound";
-// import Signup from "./components/Sign-Up";
 
 // components
 import Navbar from "./components/Navbar";
@@ -24,46 +24,57 @@ import "./css/styles.css";
 
 function App() {
   const [profile, setProfile] = useState({});
+  const [subscription, setSubscription] = useState({});
 
   return (
     <Router>
-      <div id="app-content">
+      <div id='app-content'>
         <Navbar profile={profile} />
-        <div id="router-content">
+        <div id='router-content'>
           <Switch>
             <Route
               exact
-              path="/"
+              path='/'
               render={(props) => <Login {...props} setProfile={setProfile} />}
             />
-            <Route exact path="/signup" component={Signup} />
+            <Route exact path='/signup' component={Signup} />
             <Route
               exact
-              path="/subscriptions"
+              path='/subscriptions'
               render={(props) => <Subscriptions {...props} profile={profile} />}
             />
-            <Route exact path="/contact" component={Contact} />
+            <Route exact path='/contact' component={Contact} />
             <Route
               exact
-              path="/add"
+              path='/add'
               render={(props) => <Add {...props} profile={profile} />}
             />
             <Route
               exact
-              path="/edit/:id"
+              path='/edit/:id'
               render={(props) => <Edit {...props} profile={profile} />}
             />
             <Route
               exact
-              path="/expiring"
+              path='/expiring'
               render={(props) => <Expiring {...props} profile={profile} />}
             />
             <Route
               exact
-              path="/budgetTracker"
-              render={(props) => <BudgetTracker {...props} profile={profile} />}
+              path='/budgetTracker'
+              render={(props) => (
+                <BudgetTracker
+                  {...props}
+                  profile={profile}
+                  // subscription={subscription}
+                  // props={props}
+                />
+              )}
             />
-            <Route path="*" component={NotFound} />
+            <Route
+              path="*"
+              render={(props) => <NotFound {...props} profile={profile} />}
+            />
           </Switch>
         </div>
         <Footer profile={profile} />

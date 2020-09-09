@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 
 // Define fields for the Subscription Schema
 var subscriptionSchema = new Schema({
@@ -9,7 +10,7 @@ var subscriptionSchema = new Schema({
   endDate: Date,
   price: Number,
   frequency: String,
-  profileID: String,
+  profileID: ObjectId,
 });
 
 var Subscription = mongoose.model("Subscription", subscriptionSchema);
