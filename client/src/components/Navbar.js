@@ -1,7 +1,6 @@
 // dependencies
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import Swal from "sweetalert2";
 
 const Navbar = ({ profile }) => {
   // return null;
@@ -21,8 +20,15 @@ const Navbar = ({ profile }) => {
           <div className="row">
             <div className="col s12">
               <Link to="/subscriptions" className="brand-logo center">
+              <img
+                src="/images/navbar-logo.png"
+                alt="Renooster Logo"
+                id="navbar-logo"
+              />
                 Hello {firstName}!
               </Link>
+              {/* <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a> */}
+              {/* <ul id="slide-out" className="sidenav"> */}
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li>
                   <NavLink exact to="/subscriptions">
@@ -30,13 +36,13 @@ const Navbar = ({ profile }) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink exact to="/add">
-                    Add
+                  <NavLink exact to="/expiring">
+                    Expiring Soon
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink exact to="/expiring">
-                    Expiring Soon
+                  <NavLink exact to="/add">
+                    Add
                   </NavLink>
                 </li>
                 <li>

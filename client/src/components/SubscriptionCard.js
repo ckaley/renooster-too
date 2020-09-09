@@ -49,7 +49,6 @@ const SubscriptionCard = ({
   return (
     <div className="col s12 m6 l4 xl3">
       <div className="card">
-        {/* <div className="card blue-grey darken-1"> */}
         <div className="card-image">
           <img src={icon} />
         </div>

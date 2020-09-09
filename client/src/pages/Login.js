@@ -37,7 +37,9 @@ class Login extends React.Component {
           this.props.history.push("/subscriptions");
         } else {
           Swal.fire(
-            "Incorrect email address. Try again or sign-up for an account."
+            "Incorrect email address!",
+            "Please try again or sign-up for an account.",
+            "error"
           );
         }
       })

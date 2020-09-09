@@ -44,14 +44,14 @@ const Subscriptions = (props) => {
       // icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#D52B14",
-      cancelButtonColor: "#3BB5E0",
+      cancelButtonColor: "#3C4BDD",
       confirmButtonText: "Yes, remoooove it!",
     }).then(async (result) => {
       if (result.value) {
         await axios
           .delete(`/api/subscriptions/${id}`)
           .then((res) => {
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            Swal.fire("Deleted!", "Your subscription has been deleted.", "success");
           })
           .catch((err) => {
             Swal.fire("Sorry something went wrong. Please try again.", "error");
@@ -68,8 +68,8 @@ const Subscriptions = (props) => {
       <audio className='audio-element'>
         <source src='/sounds/cowmoo.mp3'></source>
       </audio>
-      <div className='container' id='subscriptions'>
-        <div className='row'>
+      <div className="container">
+        <div className="row">
           {subscriptions.map((subscription, index) => {
             return (
               <SubscriptionCard
