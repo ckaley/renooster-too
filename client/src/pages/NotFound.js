@@ -1,7 +1,7 @@
 // dependencies
 import React from "react";
 
-const NotFound = () => {
+const NotFound = (props) => {
   return (
     <div className="container">
       <div className="row">

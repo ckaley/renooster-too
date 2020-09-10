@@ -97,7 +97,7 @@ class Subscription extends React.Component {
                       />
                     </div>
                     <div className="row">
-                      <div className="input-field col s12" id="field-name">
+                      <div className="input-field col s12" id="field-name-date">
                         <span>Start Date: </span>
                         <DatePicker
                           selected={this.state.startDate}
@@ -108,7 +108,7 @@ class Subscription extends React.Component {
                       </div>
                     </div>
                     <div className="row">
-                      <div className="input-field col s12" id="field-name">
+                      <div className="input-field col s12" id="field-name-date">
                         <span>End Date: </span>
                         <DatePicker
                           selected={this.state.endDate}
@@ -128,7 +128,7 @@ class Subscription extends React.Component {
                         onChange={this.handleChange}
                       />
                     </div>
-                    <div id="field-name">
+                    <div id="field-name-date">
                       <span>Frequency</span>
                       <p>
                         <label>

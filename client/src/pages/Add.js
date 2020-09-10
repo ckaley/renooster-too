@@ -73,7 +73,7 @@ class Subscription extends React.Component {
 
   render() {
     return (
-      <div className="container" id="newSubscription">
+      <div className="container">
         <div className="row">
           <div className="col s12 l8 offset-l2">
             <div className="card-panel">
@@ -81,7 +81,7 @@ class Subscription extends React.Component {
               <div className="row">
                 <form className="col s12" onSubmit={this.handleSubmit}>
                   <div className="row">
-                    <div className="input-field col s12">
+                    <div className="input-field col s12" id="field-name">
                       <span>Name</span>
                       <input
                         autoComplete="name"
@@ -93,7 +93,7 @@ class Subscription extends React.Component {
                       />
                     </div>
                     <div className="row">
-                      <div className="input-field col s12">
+                      <div className="input-field col s12" id="field-name-date">
                         <span>Start Date: </span>
                         <DatePicker
                           selected={this.state.startDate}
@@ -104,7 +104,7 @@ class Subscription extends React.Component {
                       </div>
                     </div>
                     <div className="row">
-                      <div className="input-field col s12">
+                      <div className="input-field col s12" id="field-name-date">
                         <span>End Date: </span>
                         <DatePicker
                           selected={this.state.endDate}
@@ -114,7 +114,7 @@ class Subscription extends React.Component {
                         />
                       </div>
                     </div>
-                    <div className="input-field col s12">
+                    <div className="input-field col s12" id="field-name">
                       <span>Price</span>
                       <input
                         autoComplete="price"
@@ -125,31 +125,33 @@ class Subscription extends React.Component {
                       />
                     </div>
                     <div>
-                      <span>Frequency</span>
-                      <p>
-                        <label>
-                          <input
-                            type="radio"
-                            value="monthly"
-                            checked={this.state.frequency === "monthly"}
-                            onChange={this.handleOptionChange}
-                            name="frequency"
-                          />
-                          <span>Monthly</span>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          <input
-                            type="radio"
-                            value="annually"
-                            checked={this.state.frequency === "annually"}
-                            onChange={this.handleOptionChange}
-                            name="frequency"
-                          />
-                          <span>Annually</span>
-                        </label>
-                      </p>
+                      <div id="field-name-date">
+                        <span>Frequency</span>
+                        <p>
+                          <label>
+                            <input
+                              type="radio"
+                              value="monthly"
+                              checked={this.state.frequency === "monthly"}
+                              onChange={this.handleOptionChange}
+                              name="frequency"
+                            />
+                            <span>Monthly</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label>
+                            <input
+                              type="radio"
+                              value="annually"
+                              checked={this.state.frequency === "annually"}
+                              onChange={this.handleOptionChange}
+                              name="frequency"
+                            />
+                            <span>Annually</span>
+                          </label>
+                        </p>
+                      </div>
                     </div>
                     <button className="btn" type="submit">
                       Submit

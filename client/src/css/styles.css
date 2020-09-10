@@ -9,9 +9,16 @@ body {
   font-weight: 600;
 }
 
-.navbar {
+label {
+  color: #000;
+}
+
+.nav-wrapper {
   background-color: black;
-  /* height: 10 0px; */
+}
+
+.nav-wrapper a:hover {
+  color: #3bb5e0;
 }
 
 .brand-logo {
@@ -58,7 +65,7 @@ body {
 .btn {
   border-radius: 10px;
   background-color: #d52b14;
-  margin-right: 10px;
+  margin-left: 10px;
   transition-duration: 0.4s;
 }
 
@@ -104,17 +111,6 @@ body {
   margin-top: 25px;
 }
 
-/* .subCards {
-  display: flex;
-  justify-content: center;
-} */
-
-.expire-subs {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .form-panel {
   border-radius: 15px;
   background-color: white;
@@ -150,6 +146,15 @@ body {
   font-weight: bold;
 }
 
+#field-name-date {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#contact-btn {
+  margin-left: -5px;
+}
+
 #expire-warning {
   color: #d52b14;
 }
@@ -158,6 +163,14 @@ body {
   width: 120px;
   height: 120px;
   margin-right: 20px;
+}
+
+#budget-card {
+  width: 1200px;
+  height: 710px;
+  padding: 0px 15px 0px 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #app-content {
