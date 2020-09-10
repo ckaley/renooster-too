@@ -42,43 +42,59 @@ const SubscriptionCard = ({
       icon =
         "https://img.apksum.com/81/com.amazon.avod.thirdpartyclient/3.0.276.245/icon.png";
       break;
+    case "Apple" || "apple" || "APPLE":
+      icon = "https://www.iconninja.com/files/4/936/948/black-apple-icon.png ";
+      break;
+    case "Spotify" || "spotify" || "SPOTIFY":
+      icon =
+        "https://www.iconfinder.com/data/icons/social-media-2091/100/social-12-512.png";
+      break;
+    case "Pandora" || "pandora" || "PANDORA":
+      icon = "https://www.pandora.com/img/pandora_logo_1024.png";
+      break;
+    case "Xfinity" || "Comcast" || "xfinity" || "comcast":
+      icon =
+        "https://pbs.twimg.com/profile_images/1131771952828375040/wTv-dtEe.png";
+      break;
+    case "Dropbox" || "dropbox" || "DROPBOX":
+      icon = "https://vectorified.com/images/dropbox-icon-22.png";
+      break;
     default:
       icon = "/images/renoosterlogo.png";
   }
 
   return (
-    <div className="col s12 m6 l4 xl3">
-      <div className="card">
-        <div className="card-image">
+    <div className='col s12 m6 l4 xl3'>
+      <div className='card'>
+        <div className='card-image'>
           <img src={icon} />
         </div>
-        <div className="card-content">
-          <span className="card-title">{name}</span>
-          <p className="card-text">
+        <div className='card-content'>
+          <span className='card-title'>{name}</span>
+          <p className='card-text'>
             Start Date: <i>{Moment(startDate).format("MM-DD-YYYY")}</i>
           </p>
-          <p className="card-text" id="expire-warning">
+          <p className='card-text' id='expire-warning'>
             End Date: <i>{Moment(endDate).format("MM-DD-YYYY")}</i>
           </p>
-          <p className="card-text">
+          <p className='card-text'>
             Price: <i>${price.toFixed(2)}</i>
           </p>
-          <p className="card-text">
+          <p className='card-text'>
             Frequency: <i>{frequency}</i>
           </p>
         </div>
-        <div className="card-action">
-          <Link className="btn" id="btn-edit" to={`edit/${_id}`}>
+        <div className='card-action'>
+          <Link className='btn' id='btn-edit' to={`edit/${_id}`}>
             Edit
           </Link>
           <button
-            className="btn"
+            className='btn'
             id={_id}
             onClick={(event) => {
               console.log(event.target);
               deleteSubscription(_id);
-            }}
-          >
+            }}>
             Delete
           </button>
         </div>

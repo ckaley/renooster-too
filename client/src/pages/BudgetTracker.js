@@ -39,6 +39,7 @@ class BudgetTracker extends Component {
             }
           }
         }
+        console.log(myArray);
         this.setState({
           myArray: myArray,
         });
@@ -51,10 +52,6 @@ class BudgetTracker extends Component {
   render() {
     const data = {
       labels: [
-        "September",
-        "October",
-        "November",
-        "December",
         "January",
         "February",
         "March",
@@ -63,37 +60,38 @@ class BudgetTracker extends Component {
         "June",
         "July",
         "August",
+        "September",
+        "October",
+        "November",
+        "December",
       ],
       datasets: [
         {
           label: "Total Subscription Cost",
-          data: this.state.myArray,
+          data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
           fill: true, // Don't fill area under the line
           backgroundColor: "green",
         },
       ],
-      options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
+    };
+
+    const options = {
+      scales: {
+        yAxes: {
+          ticks: {
+            beginAtZero: true,
+          },
         },
       },
     };
 
     return (
-      <div className="container">
-        <div
-          className="card" id="budget-card"
-        >
+      <div className='container'>
+        <div className='card' id='budget-card'>
           <div>
             <h3>Expenses for Next 12 Months</h3>
           </div>
-          <article className="canvas-container">
+          <article className='canvas-container'>
             <Bar data={data} />
           </article>
         </div>
