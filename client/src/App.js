@@ -1,7 +1,6 @@
 // dependencies
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import M from  'materialize-css/dist/js/materialize.min.js';
 import axios from "axios";
 
 // page components
@@ -28,40 +27,40 @@ function App() {
 
   return (
     <Router>
-      <div id='app-content'>
+      <div id="app-content">
         <Navbar profile={profile} />
-        <div id='router-content'>
+        <div id="router-content">
           <Switch>
             <Route
               exact
-              path='/'
+              path="/"
               render={(props) => <Login {...props} setProfile={setProfile} />}
             />
-            <Route exact path='/signup' component={Signup} />
+            <Route exact path="/signup" component={Signup} />
             <Route
               exact
-              path='/subscriptions'
+              path="/subscriptions"
               render={(props) => <Subscriptions {...props} profile={profile} />}
             />
-            <Route exact path='/contact' component={Contact} />
+            <Route exact path="/contact" component={Contact} />
             <Route
               exact
-              path='/add'
+              path="/add"
               render={(props) => <Add {...props} profile={profile} />}
             />
             <Route
               exact
-              path='/edit/:id'
+              path="/edit/:id"
               render={(props) => <Edit {...props} profile={profile} />}
             />
             <Route
               exact
-              path='/expiring'
+              path="/expiring"
               render={(props) => <Expiring {...props} profile={profile} />}
             />
             <Route
               exact
-              path='/budgetTracker'
+              path="/budgetTracker"
               render={(props) => (
                 <BudgetTracker
                   {...props}
