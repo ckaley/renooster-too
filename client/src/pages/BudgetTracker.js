@@ -66,7 +66,7 @@ class BudgetTracker extends Component {
       ],
       datasets: [
         {
-          label: "Subscription Cost",
+          label: "Total Subscription Cost",
           data: this.state.myArray,
           fill: true, // Don't fill area under the line
           backgroundColor: "green",
@@ -88,11 +88,10 @@ class BudgetTracker extends Component {
     return (
       <div className="container">
         <div
-          className="card"
-          style={{ width: 1200, height: 740, alignSelf: "center" }}
+          className="card" id="budget-card"
         >
           <div>
-            <h1>Expenses for Next 12 Months</h1>
+            <h3>Expenses for Next 12 Months</h3>
           </div>
           <article className="canvas-container">
             <Bar data={data} />

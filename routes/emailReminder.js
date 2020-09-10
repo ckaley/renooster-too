@@ -8,7 +8,7 @@ var moment = require("moment");
 // new router
 var router = express.Router();
 
-router.post("/", (req, res) => {
+router.get("/", (req, res) => {
   // Get Today's Date
   var filterDate = new Date();
   // Number of days to add for the filter
@@ -36,6 +36,8 @@ router.post("/", (req, res) => {
     },
   ])
     .then((expiredSubscriptions) => {
+      console.log("I am sending emails!");
+
       var firstName = "";
       var lastName = "";
       var email = "";
@@ -105,16 +107,13 @@ router.post("/", (req, res) => {
         // send mail
         transporter.sendMail(mailOptions, (err, result) => {
           if (err) {
-            console.log("Falied to send message");
+            console.log("falied to send message");
           }
           console.log("Message Sent");
         });
-        console.log();
       }
 
-      res
-        .status(200)
-        .send("Successfully sent " + expiredSubscriptions.length + " messages");
+      res.status(200).json(expiredSubscriptions);
     })
     .catch((err) => res.status(404).json(err));
 });
