@@ -70,10 +70,7 @@ function App() {
                 />
               )}
             />
-            <Route
-              path="*"
-              render={(props) => <NotFound {...props} profile={profile} />}
-            />
+            <Route path="*" component={NotFound} />
           </Switch>
         </div>
         <Footer profile={profile} />

@@ -16,7 +16,7 @@ const Subscriptions = (props) => {
   // so we can call getSubscriptions more than once...upon first page load and after a subscription is deleted to render updated list of subscriptions.
   useEffect(() => {
     Swal.fire({
-      title: "It's Time to <br> Cock-a-doodle-Renew!",
+      title: "It's time to <br> Cock-a-doodle-Renew!",
       imageUrl: "/images/renewrooster.png",
       confirmButtonColor: "#D52B14",
       imageAlt: "Renooster Rooster",

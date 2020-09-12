@@ -51,10 +51,6 @@ class BudgetTracker extends Component {
   render() {
     const data = {
       labels: [
-        "September",
-        "October",
-        "November",
-        "December",
         "January",
         "February",
         "March",
@@ -63,6 +59,10 @@ class BudgetTracker extends Component {
         "June",
         "July",
         "August",
+        "September",
+        "October",
+        "November",
+        "December",
       ],
       datasets: [
         {
@@ -87,9 +87,7 @@ class BudgetTracker extends Component {
 
     return (
       <div className="container">
-        <div
-          className="card" id="budget-card"
-        >
+        <div className="card" id="budget-card">
           <div>
             <h3>Expenses for Next 12 Months</h3>
           </div>
